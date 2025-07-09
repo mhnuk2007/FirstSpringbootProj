@@ -11,11 +11,9 @@ public class FirstSpringbootProjApplication {
 		ApplicationContext context = SpringApplication.run(FirstSpringbootProjApplication.class, args);
 		System.out.println("Hello World");
 
-		Alien obj = new Alien(); // Not managed by Spring
-		obj.code(); // output: coding...
+		Alien obj = context.getBean(Alien.class); // managed by Spring
+		obj.code(); // output: compiling...
 
-		Alien obj1 = context.getBean(Alien.class); // managed by Spring
-		obj1.code(); // output: coding...
 	}
 
 }
